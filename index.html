@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Notes</title>
+  </head>
+  <body class="bg-gray-900">
+    <div class="toggle-container">
+      <button id="toggle">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+    <div class="popup-box">
+      <div class="popup">
+        <div class="content">
+          <header>
+            <p>Adicionar uma nova anotação</p>
+            <i class="uil uil-times"></i>
+          </header>
+          <form action="#">
+            <div class="row title">
+              <label>Título</label>
+              <input type="text" />
+            </div>
+            <div class="row description">
+              <label>Description</label>
+              <textarea></textarea>
+            </div>
+            <button>Adicionar nota</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <li class="add-box">
+        <div class="icon">
+          <i class="uil uil-plus"></i>
+        </div>
+        <p>Adicionar nova anotação</p>
+      </li>
+    </div>
+    <script src="./js/note.js"></script>
+    <script src="./js/darkLight.js"></script>
+  </body>
+</html>

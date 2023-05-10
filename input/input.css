@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper{
+    @apply mt-8 p-8 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
+}
+.wrapper .note{
+    @apply flex justify-between flex-col
+}
+.note .details{
+    @apply max-h-40 overflow-y-auto
+}
+.wrapper li{
+    @apply bg-white list-none h-64 rounded-md px-4 py-5;
+}
+.add-box, .icon, .bottom-content, .settings .menu li, .content header{
+    @apply flex items-center justify-between;
+}
+.add-box{
+    @apply justify-center flex-col cursor-pointer;
+}
+.add-box .icon{
+    @apply border-2 border-dashed border-indigo-500 h-20 w-20 rounded-full text-5xl text-indigo-500 justify-center;
+}
+.add-box p{
+    @apply text-indigo-500 font-medium mt-5;
+}
+
+/* Cards of notes */
+.note p{
+    @apply text-2xl font-medium text-gray-700;
+}
+.note span{
+    @apply text-gray-400 text-sm block mt-1;
+}
+.note .bottom-content{
+    @apply border-t border-gray-500 py-3;
+}
+.bottom-content span{
+    @apply text-gray-700 text-sm;
+}
+.bottom-content .settings i{
+    @apply cursor-pointer;
+}
+
+/* Editar / Remover */
+.settings{
+    @apply relative;
+}
+.settings .menu{
+    @apply shadow-lg absolute bottom-0 rounded-md py-1 px-0 -right-1 scale-0 transform ease-out duration-200;
+    transform-origin: bottom right;
+}
+.settings.show .menu{
+    @apply scale-100;
+}
+.settings .menu li{
+    @apply h-6 justify-start cursor-pointer p-4;
+}
+.menu li:hover{
+    @apply bg-gray-100;
+}
+.menu li i{
+    @apply px-2;
+}
+
+/* Pop-up box */
+.popup-box{
+    @apply fixed top-0 left-0 bg-popup h-full w-full z-50;
+}
+.popup-box .popup{
+    @apply absolute bottom-1/4 left-1/2 -translate-x-1/2 z-10 max-w-md w-full
+}
+.popup-box, .popup-box .popup{
+    @apply invisible pointer-events-none;
+}
+.popup-box.show, .popup-box.show .popup{
+    @apply visible pointer-events-auto transition-all ease-out duration-300;
+}
+.popup .content{
+    @apply bg-white rounded-md;
+}
+.popup .content header{
+    @apply border-b border-gray-500 py-5 px-6;
+}
+.content{
+    @apply py-1;
+}
+.content header p{
+    @apply font-medium text-xl;
+}
+.content header i{
+    @apply text-gray-700 cursor-pointer text-2xl;
+}
+.content form{
+    @apply mt-4 ml-6 mr-6 mb-9;
+}
+.content form :where(input, textarea){
+    @apply w-full rounded-sm border border-gray-500 outline-none h-12 text-sm py-3 px-4;
+}
+.content form .row{
+    @apply mb-5;
+}
+form .row label{
+    @apply block text-lg mb-2;
+}
+.content form textarea{
+    @apply h-36 resize-none;
+}
+.content form button{
+    @apply w-full h-12 bg-gray-700 text-white text-lg rounded-md;
+}
+
+/* Dark on Light */
+body{
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+body.dark{
+    @apply bg-white text-white;
+}
+body.dark .add-box, body.dark .content, body.dark .note{
+    @apply bg-gray-900;
+}
+body.dark input, body.dark textarea{
+    @apply text-gray-900;
+}
+body.dark .details p, body.dark .bottom-content span{
+    @apply text-white;
+}
+body.dark .menu li{
+    @apply bg-gray-800 mb-1
+}
+.toggle-container{
+    @apply fixed top-4 right-8
+}
+.toggle-container button{
+    @apply text-3xl text-white
+}
